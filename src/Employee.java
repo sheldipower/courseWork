@@ -16,6 +16,7 @@ public class Employee {
         this.salary = salary;
         this.id = count++;
     }
+
     public String getSurname (){
         return surname;
     }
