@@ -1,8 +1,9 @@
 import java.util.Arrays;
 
 public class Main {
+    private static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
-        Employee[] employees = new Employee[10];
         employees[0] = new Employee("Иванов ", "Иван ", "Иванович ", 1, 45000);
         employees[1] = new Employee("Пертов ", "Петр ", "Семенович ", 3, 50000);
         employees[2] = new Employee("Семенова ", "Наталья ", "Аркадьевна ", 5, 75000);
@@ -31,12 +32,25 @@ public class Main {
         int minSalary = result.getSalary();
         for (Employee employee : employees) {
             if (employee != null && employee.getSalary() < minSalary) {
-           minSalary = employee.getSalary();
-            result = employee;
+                minSalary = employee.getSalary();
+                result = employee;
             }
 
         }
- return result;
+        return result;
+    }
+
+    public static Employee maxSalary() {
+        Employee result = employees[0];
+        int maxSalary = result.getSalary();
+        for (Employee employee : employees) {
+            if (employee != null && employee.getSalary() > maxSalary) {
+                maxSalary = employee.getSalary();
+                result = employee;
+            }
+
+        }
+        return result;
     }
 }
 
